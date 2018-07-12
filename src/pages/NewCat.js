@@ -29,7 +29,7 @@ handleChange(event){
 
     return (
         <div>
-
+<form>
         <FormControl
           type="text"
           name="name"
@@ -50,6 +50,11 @@ handleChange(event){
               value={this.state.form.enjoys}
               />
 
+              <FormControl
+                type="submit"
+                value= "submit"
+                />
+</form>
 
 
         </div>
