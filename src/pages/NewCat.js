@@ -24,12 +24,18 @@ handleChange(event){
   this.setState({form: form})
   console.log({form});
 }
+
+formSubmit(event){
+  event.preventDefault()
+  this.props.handleClick(this.state.form)
+}
+
   render() {
     console.log('state', this.state)
 
     return (
         <div>
-<form>
+        <form onSubmit={this.formSubmit.bind(this)}>
         <FormControl
           type="text"
           name="name"
@@ -53,7 +59,11 @@ handleChange(event){
               <FormControl
                 type="submit"
                 value= "submit"
+
                 />
+
+
+
 </form>
 
 

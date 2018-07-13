@@ -28,28 +28,29 @@ class App extends Component {
           age: 12,
           enjoys: "Being in charge."
         },
-        {
-          id: 3,
-          name: 'Mr. Meowsalot',
-          age: 12,
-          enjoys: "Being in charge."
-        }
-      ],
-      user: {
-        name: "Cat",
-        age: "aksjdf3049585aeuk"
-      }
+
+      ]
     }
+
+
   }
+  handleClick(formNew){
+    let {cats} = this.state
+    console.log("newform", formNew);
+    cats.push(formNew)
+    this.setState({cats: cats})
+}
 
 
   render() {
+    console.log(this.state);
     return (
       <div>
 
         <Router>
           <div>
-            <Route path="/NewCat" component={NewCat} />
+            <Route path="/NewCat"
+            render={(props) => <NewCat  handleClick = {this.handleClick.bind(this)}/>} />
 
             <Route exact path="/cats" render={(props) => <Cats cats={this.state.cats} />} />
 
